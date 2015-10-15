@@ -12,7 +12,7 @@ function yum() {
 }
 
 {
-  yum install --disablerepo=updates -y make kernel-headers kernel-devel gcc perl bzip2
+  yum install --disablerepo=updates -y make kernel-headers kernel-devel gcc perl bzip2  
   iso_path=/home/vagrant/VBoxGuestAdditions.iso
   mnt_path=/mnt
 }
