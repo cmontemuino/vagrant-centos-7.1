@@ -65,6 +65,28 @@ Requirements
 * Platforms
   * Virtualbox (>= 5.0.6)(https://www.virtualbox.org/wiki/Downloads)
 
+Troubleshooting
+---------------
+In case of getting the following error:
+```bash
+$ vagrant init cmontemuino/centos7.1.x64-base; vagrant up --provider virtualbox
+The box 'cmontemuino/centos7.1.x64-base' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Atlas, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://atlas.hashicorp.com/cmontemuino/centos7.1.x64-base"]
+Error: error setting certificate verify locations:
+  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+```
+Then check whether `ca-certificates` packages is installed. Another possibility is you need to create the `certs` folder, and copy the `ca-certificates.crt` to it:
+```bash
+$ sudo mkdir -p /etc/pki/tls/certs
+$ sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+```
+
 Aknowledgments
 --------------
 
