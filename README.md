@@ -81,7 +81,7 @@ Error: error setting certificate verify locations:
   CAfile: /etc/pki/tls/certs/ca-bundle.crt
   CApath: none
 ```
-Then check whether `ca-certificates` packages is installed. Another possibility is you need to create the `certs` folder, and copy the `ca-certificates.crt` to it:
+Then check whether `ca-certificates` package is installed. Another possibility is you need to create the `certs` folder, and copy the `ca-certificates.crt` to it:
 ```bash
 $ sudo mkdir -p /etc/pki/tls/certs
 $ sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
